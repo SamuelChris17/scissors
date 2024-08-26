@@ -1,12 +1,12 @@
 import request from 'supertest';
 import express from 'express';
 import mongoose from 'mongoose';
-import urlRoutes from '../src/routes/url'; // Your URL routes
+import urlRoutes from '../src/routes/url';
 import { Request, Response } from 'express';
 
 const app = express();
 app.use(express.json());
-app.use('/api/url', urlRoutes);
+app.use('/api/url', shortCode);
 
 before(async () => {
   await mongoose.connect(process.env.MONGO_URI as string );
@@ -30,7 +30,7 @@ describe('POST /api/url/shorten', () => {
 describe('GET /api/url/:shortCode', () => {
   it('should redirect to the original URL', async () => {
     const response = await request(app)
-      .get('/api/url/test-shortcode'); // Replace with a valid short code
+      .get('/api/url/test-shortcode'); 
 
     expect(response.status).toBe(302);
     expect(response.headers.location).toBe('https://www.example.com');
