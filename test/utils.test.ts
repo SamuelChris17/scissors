@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { shortenUrl } from '../src/controllers/urlController'; // Replace with your actual function
+import { shortenUrl } from '../src/controllers/urlController';
 
 describe('shortenUrl', () => {
   it('should generate a string of length 6', () => {
