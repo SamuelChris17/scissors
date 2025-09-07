@@ -6,6 +6,7 @@ import qrCodeRoutes from './routes/qrCode';
 import analyticsRoutes from './routes/analytics';
 import authRoutes from './routes/auth';
 import rateLimiters from './middlewares/rateLimiter';
+import supertest from './supertest.ts'
 
 require('events').EventEmitter.defaultMaxListeners = 15;
 
