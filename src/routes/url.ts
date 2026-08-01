@@ -1,8 +1,9 @@
 import { Router } from 'express';
 import { nanoid } from 'nanoid';
 import { shortenUrl, redirectUrl } from '../controllers/urlController';
-import Url from '../models/urlModel'
-import cache from '../cache'
+import Url from '../models/urlModel';
+import cache from '../cache';
+import dotenv from 'dotenv';
 
 /**
  * @swagger
